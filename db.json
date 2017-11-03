@@ -1,19 +1,13 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "contacts": [{
+        "id": 1,
+        "firstName": "John",
+        "secondName": "Doe",
+        "phone": 380666666666,
+        "birthday": "01.01.2000",
+        "website": "http://example.com",
+        "email": "john.doe@example.com",
+        "company": "freelance"
+    }],
+    "profile": { "name": "typicode" }
 }
