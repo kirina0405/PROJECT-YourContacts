@@ -1,3 +1,6 @@
-<p>
-  all-contacts works!
-</p>
+<ul>
+    <li *ngFor="let item of contactsArray">
+        <a href="" routerLink="/contact/{{item.id}}">{{ item.firstName }} {{ item.secondName }}</a>
+        <a href="" routerLink="/contact/{{item.id}}">{{ item.birthday }} {{ item.website }}</a>
+    </li>
+</ul>
