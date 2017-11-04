@@ -1,6 +1,16 @@
 <ul>
-    <li *ngFor="let item of contactsArray">
-        <a href="" routerLink="/contact/{{item.id}}">{{ item.firstName }} {{ item.secondName }}</a>
-        <a href="" routerLink="/contact/{{item.id}}">{{ item.birthday }} {{ item.website }}</a>
+    <li *ngFor="let contact of contactsArray">
+        <a href="" routerLink="/contact/{{contact.id}}">{{ contact.firstName }} {{ contact.secondName }}</a>
+        <br>
+        <a href="" routerLink="/contact/{{contact.id}}">{{ contact.birthday }} {{ contact.website }}</a>
+        <button class="delete" (click)="delete(contact); $event.stopPropagation()">x</button>
     </li>
 </ul>
+
+<div>
+    <label>Новый контакт:</label>
+    <input #firstName />
+    <button (click)="add(firstName.value); firstName.value=''">
+      Добавить
+    </button>
+</div>

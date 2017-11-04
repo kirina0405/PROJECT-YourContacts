@@ -3,3 +3,12 @@
     <li><i class="fa fa-phone-square" aria-hidden="true"></i><span> {{contact.phone}}</span></li>
     <li><i class="fa fa-envelope" aria-hidden="true"></i> {{contact.email}}</li>
 </ul>
+
+<div>
+    <input [(ngModel)]="contact.firstName" placeholder="name" />
+    <input [(ngModel)]="contact.secondName" placeholder="secondName" />
+    <input [(ngModel)]="contact.email" placeholder="email" />
+</div>
+
+<button (click)="goBack()">Back</button>
+<button (click)="edit()">Save</button>
