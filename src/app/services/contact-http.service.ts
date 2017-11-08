@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -10,7 +11,6 @@ export class ContactHttpService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private contactsUrl = 'http://localhost:3000/contacts';
-
   private contact;
 
   constructor(private http: Http) { }
@@ -24,21 +24,11 @@ export class ContactHttpService {
       .catch(this.handleError);
     }
 
-    // contact = {
-    //   'firstName': '',
-    //   'secondName': '',
-    //   'phone': '',
-    //   'birthday': '',
-    //   'website': '',
-    //   'email': '',
-    //   'company': ''
-    // };
-
   createContact(contact): Promise<Contact> {
     return this.http
-      .post(this.contactsUrl, JSON.stringify({contact: contact}), {headers: this.headers})
+      .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
       .toPromise()
-      .then(res => res.json().data as Contact)
+      .then(res => res.json())
       .catch(this.handleError);
   }
 
@@ -50,7 +40,7 @@ export class ContactHttpService {
       .catch(this.handleError);
   }
 
-  deleteContact(id?) {
+  deleteContact(id?): Promise<void> {
       return this.http.delete(`${this.contactsUrl}/${id}`, {headers: this.headers})
       .toPromise()
       .then(() => null)
@@ -62,17 +52,3 @@ export class ContactHttpService {
     return Promise.reject(error.message || error);
   }
 }
-
-// createContact(body) {
-//   return this.http.post(`${this.url}/contacts/`, JSON.stringify(body), {headers: this.headers} )
-//   .toPromise();
-// }
-
-// deleteContact(id?) {
-//   return this.http.delete(`${this.url}/contacts/`, {headers: this.headers}).toPromise();
-// }
-
-// updateContact(name) {
-//   return this.http.put(`${this.url}/contacts/`, JSON.stringify(name), {headers: this.headers} )
-//   .toPromise();
-// }

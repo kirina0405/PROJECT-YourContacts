@@ -1,14 +1,47 @@
-<h2>{{ contact.firstName }} {{ contact.secondName }}</h2>
-<ul>
-    <li><i class="fa fa-phone-square" aria-hidden="true"></i><span> {{contact.phone}}</span></li>
-    <li><i class="fa fa-envelope" aria-hidden="true"></i> {{contact.email}}</li>
-</ul>
-
-<div>
-    <input [(ngModel)]="contact.firstName" placeholder="name" />
-    <input [(ngModel)]="contact.secondName" placeholder="secondName" />
-    <input [(ngModel)]="contact.email" placeholder="email" />
+<div [hidden]="submitted">
+    <h2>{{ contact.firstName }} {{ contact.secondName }}</h2>
+    <ul>
+        <li>{{contact.phone}}</li>
+        <li>{{contact.birthday}}</li>
+        <li>{{contact.website}}</li>
+        <li>{{contact.email}}</li>
+        <li>{{contact.company}}</li>
+    </ul>
+    <button class="btn btn-primary" (click)="submitted=true">Редагувати</button>
 </div>
+<!-- ==================Edit=================== -->
 
-<button (click)="goBack()">Back</button>
-<button (click)="edit()">Save</button>
+<div class="container">
+    <div [hidden]="submitted">
+        <h1>Редагувати контакт</h1>
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" required [(ngModel)]="contact.firstName" name="name" #name="ngModel" placeholder="name" />
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="secondName" [(ngModel)]="contact.secondName" name="secondName" placeholder="secondName">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="phone" [(ngModel)]="contact.phone" name="phone" placeholder="phone">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="birthday" [(ngModel)]="contact.birthday" name="alterEgo" placeholder="birthday">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="website" [(ngModel)]="contact.website" name="website" placeholder="website">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="email" [(ngModel)]="contact.email" name="email" placeholder="email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="company" [(ngModel)]="contact.company" name="company" placeholder="company">
+            </div>
+
+            <button type="submit" class="btn btn-success" (click)="goBack()">Скасувати</button>
+            <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="edit()">Редагувати</button>
+
+            <button type="submit" class="btn btn-success" (click)="add()">Зберегти</button>
+        </form>
+    </div>
+</div>

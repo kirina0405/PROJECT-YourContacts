@@ -11,40 +11,22 @@ import { ContactHttpService } from '../services/contact-http.service';
 })
 export class AllContactsComponent implements OnInit {
 
-  public contactsArray = [];
+  public contactsArray: Contact[];
   public selectedContact: Contact;
 
-    // public contact: Contact = {
-    //   id: 0,
-    //   firstName: '',
-    //   secondName: ''
-    // };
+  constructor(
 
-    // private defaultContact: Contact = {
-    //   id: 0,
-    //   firstName: '',
-    //   secondName: ''
-    // };
+    private http: ContactHttpService,
+    private router: Router) { }
 
-    constructor(
-      private http: ContactHttpService,
-      private router: Router) { }
-
-    ngOnInit() {
-      this.http.getContact().then(response => {
-        console.log(response);
-        this.contactsArray = (response as any);
-      });
+    getContact(): void {
+      this.http
+          .getContact()
+          .then(response => this.contactsArray = (response as any));
     }
 
-    add(name: string): void {
-      name = name.trim();
-      if (!name) { return; }
-      this.http.createContact(name)
-        .then(contact => {
-          this.contactsArray.push(contact);
-          this.selectedContact = null;
-        });
+    ngOnInit() {
+      this.getContact();
     }
 
     delete(contact: Contact): void {
@@ -55,4 +37,4 @@ export class AllContactsComponent implements OnInit {
             if (this.selectedContact === contact) { this.selectedContact = null; }
           });
     }
-}
+  }
