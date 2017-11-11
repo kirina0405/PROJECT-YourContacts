@@ -9,10 +9,11 @@
     </ul>
     <button class="btn btn-primary" (click)="submitted=true">Редагувати</button>
 </div>
+
 <!-- ==================Edit=================== -->
 
 <div class="container">
-    <div [hidden]="submitted">
+    <div [hidden]="!submitted">
         <h1>Редагувати контакт</h1>
         <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
             <div class="form-group">
@@ -41,7 +42,6 @@
             <button type="submit" class="btn btn-success" (click)="goBack()">Скасувати</button>
             <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="edit()">Редагувати</button>
 
-            <button type="submit" class="btn btn-success" (click)="add()">Зберегти</button>
         </form>
     </div>
 </div>
