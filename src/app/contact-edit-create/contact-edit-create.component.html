@@ -1,4 +1,60 @@
-<div class="container">
+<div class="modal">
+    <aside class="modal-content" id="edit">
+        <header>
+            <div class="user">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <h2>Новий контакт</h2>
+            </div>
+            <a href="#" title="Закрыть" class="closebtn">&times;</a>
+        </header>
+        <section class="modal-body">
+            <div class="contact-info">
+                <h4>Контактна інформація</h4>
+                <ul>
+                    <li>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.firstName" placeholder="Iм'я" />
+                    </li>
+                    <li>
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.secondName" placeholder="Iм'я" />
+                    </li>
+                    <li>
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.phone" placeholder="Номер телефону" />
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.email" placeholder="Номер телефону" />
+                    </li>
+                </ul>
+            </div>
+            <div class="person-info">
+                <h4>Особиста інформація</h4>
+                <ul>
+                    <li>
+                        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.birthday" placeholder="День народження" />
+                    </li>
+                    <li>
+                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.website" placeholder="Website" />
+                    </li>
+                    <li>
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.company" placeholder="Мiсце роботи" />
+                    </li>
+                </ul>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-success" (click)="goBack()">Скасувати</button>
+                <button type="submit" class="btn btn-success" (click)="add()">Зберегти</button>
+            </div>
+        </section>
+    </aside>
+</div>
+<!-- ===================================== -->
+<!-- <div class="container">
     <h1>Новий контакт</h1>
     <form #contactForm="ngForm">
         <div class="form-group">
@@ -26,4 +82,4 @@
         <button type="submit" class="btn btn-success" (click)="goBack()">Скасувати</button>
         <button type="submit" class="btn btn-success" (click)="add()">Зберегти</button>
     </form>
-</div>
+</div> -->

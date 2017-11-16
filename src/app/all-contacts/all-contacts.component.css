@@ -1,0 +1,144 @@
+/* =============list contacts============== */
+
+.list {
+    max-width: 100%;
+    padding-top: 80px;
+    margin: 0;
+}
+
+.contact {
+    height: 50px;
+    width: 97%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name,
+.phone,
+.web {
+    text-align: left;
+    width: 150px;
+}
+
+.item,
+.item a,
+.edit-del {
+    display: inline-flex;
+    align-items: center;
+}
+
+.item .fa {
+    font-size: 35px;
+    color: #e3c08c;
+    margin-right: 30px;
+}
+
+.edit-del .fa {
+    font-size: 20px;
+    color: #b9b9b9;
+    margin: 0;
+}
+
+.edit-del .fa:hover,
+.menu a:hover,
+.menu .fa:hover {
+    color: #3663a7;
+    background-color: #f3f2f2;
+}
+
+.contact:hover {
+    background-color: #f3f2f2;
+}
+
+.edit-del button {
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.edit-del button:hover,
+.edit-del button:focus {
+    outline: none;
+}
+
+
+/* ========NewContact========== */
+
+.newContact {
+    position: fixed;
+    left: 90%;
+    top: 85%;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 40px;
+    border-style: none;
+    background-color: #e3c08c;
+    text-align: center;
+    font-size: 35px;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.newContact:hover {
+    outline: none;
+    cursor: pointer;
+    background-color: #b99867;
+}
+
+
+/* ========sidebar=============== */
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    width: 0;
+    z-index: 1;
+    top: 64px;
+    left: 0;
+    background-color: #fff;
+    border-right: 1px solid #d7d7da;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a,
+.list a,
+.menu a {
+    height: 25px;
+    padding: 8px 8px 8px 25px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #3a3838;
+    transition: 0.3s;
+}
+
+.sidenav a,
+.menu a {
+    display: block;
+}
+
+.menu .fa {
+    font-size: 18px;
+    margin-right: 15px;
+    color: #b9b9b9;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 25px;
+}
+
+#main {
+    transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+}

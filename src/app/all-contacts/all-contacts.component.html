@@ -1,12 +1,30 @@
-<ul>
-    <li *ngFor="let contact of contactsArray">
-        <a href="" routerLink="/contact/{{contact.id}}">{{ contact.firstName }} {{ contact.secondName }}</a>
-        <a href="" routerLink="/contact/{{contact.id}}">{{ contact.phone }}</a>
-
-        <br>
-        <a href="" routerLink="/contact/{{contact.id}}">{{ contact.birthday }} {{ contact.website }}</a>
-        <button class="delete" (click)="delete(contact); $event.stopPropagation()">x</button>
-    </li>
-</ul>
-
-<button type="button" class="btn btn-default" routerLink="/contact/new">Новий контакт</button>
+<main [hidden]="submitted" id="main">
+    <ul class="list">
+        <li *ngFor="let contact of contactsArray" class="contact">
+            <div class="item">
+                <a routerLink="/contact/{{contact.id}}">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <span class="name">{{ contact.firstName }} {{ contact.secondName }}</span>
+                    <span class="phone">{{ contact.phone }}</span>
+                    <span class="web">{{ contact.website }}</span>
+                </a>
+            </div>
+            <div class="edit-del">
+                <button routerLink="/contact/{{contact.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <button (click)="delete(contact); $event.stopPropagation()"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+        </li>
+    </ul>
+</main>
+<!-- =============NewContact================ -->
+<button type="button" class="newContact" routerLink="/contact/new">+</button>
+<!-- ============Sidenav===================== -->
+<nav id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="menu">
+        <a routerLink="/contact"><i class="fa fa-users" aria-hidden="true"></i><span>Усi контакти</span></a>
+        <a href="#" routerLink="/contact/new"><i class="fa fa-user-plus" aria-hidden="true"></i>Додати контакт</a>
+        <a href="#"><i class="fa fa-user-times" aria-hidden="true"></i>Видалити контакт</a>
+        <a href="#"><i class="fa fa-user-o" aria-hidden="true"></i>Редагувати контакт</a>
+    </div>
+</nav>

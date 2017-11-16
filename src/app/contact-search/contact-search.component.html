@@ -1,4 +1,15 @@
-<div id="search-component">
+<div id="search-component" class="search">
+    <span><i class="fa fa-search"></i></span>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" type="text" placeholder="Пошук">
+    <div>
+        <div *ngFor="let contact of contactsArray | async" (click)="gotoDetail(contact)" class="search-result">
+            {{contact.firstName}}
+        </div>
+    </div>
+</div>
+
+
+<!-- <div id="search-component">
     <h4>Пошук контакту</h4>
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
     <div>
@@ -6,4 +17,4 @@
             {{contact.firstName}}
         </div>
     </div>
-</div>
+</div> -->

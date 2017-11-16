@@ -1,0 +1,23 @@
+header {
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    background-color: #203e6c;
+}
+
+.button-sidebar {
+    margin: 0 0 3px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+a,
+a:hover {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    margin: 0 30px;
+}

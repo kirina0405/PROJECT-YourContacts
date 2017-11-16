@@ -1,17 +1,95 @@
-<div [hidden]="submitted">
-    <h2>{{ contact.firstName }} {{ contact.secondName }}</h2>
-    <ul>
-        <li>{{contact.phone}}</li>
-        <li>{{contact.birthday}}</li>
-        <li>{{contact.website}}</li>
-        <li>{{contact.email}}</li>
-        <li>{{contact.company}}</li>
-    </ul>
-    <button class="btn btn-primary" (click)="submitted=true">Редагувати</button>
+<div [hidden]="submitted" class="modal">
+    <aside class="modal-content" id="modal">
+        <header>
+            <div class="user">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <h2>{{ contact.firstName }} {{ contact.secondName }}</h2>
+            </div>
+            <a href="#" title="Закрыть" class="closebtn">&times;</a>
+        </header>
+        <section class="modal-body">
+            <div class="contact-info">
+                <h4>Контактна інформація</h4>
+                <ul>
+                    <li><i class="fa fa-phone-square" aria-hidden="true"></i><span> {{contact.phone}}</span></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> {{contact.email}}</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="person-info">
+                <h4>Особиста інформація</h4>
+                <ul>
+                    <li><i class="fa fa-birthday-cake" aria-hidden="true"></i> {{contact.birthday}}</li>
+                    <li><i class="fa fa-sitemap" aria-hidden="true"></i> {{contact.website}}</li>
+                    <li><i class="fa fa-briefcase" aria-hidden="true"></i> {{contact.company}}</li>
+                </ul>
+            </div>
+        </section>
+        <button class="btn btn-primary" (click)="submitted=true">Редагувати</button>
+    </aside>
+
 </div>
+
 
 <!-- ==================Edit=================== -->
 
+<div [hidden]="!submitted" class="modal">
+    <aside class="modal-content" id="edit">
+        <header>
+            <div class="user">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <h2>Редагувати контакт</h2>
+            </div>
+            <a href="#" title="Закрыть" class="closebtn">&times;</a>
+        </header>
+        <section class="modal-body">
+            <div class="contact-info">
+                <h4>Контактна інформація</h4>
+                <ul>
+                    <li>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.firstName" placeholder="Iм'я" />
+                    </li>
+                    <li>
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.secondName" placeholder="Iм'я" />
+                    </li>
+                    <li>
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.phone" placeholder="Номер телефону" />
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.email" placeholder="Номер телефону" />
+                    </li>
+                </ul>
+            </div>
+            <div class="person-info">
+                <h4>Особиста інформація</h4>
+                <ul>
+                    <li>
+                        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.birthday" placeholder="День народження" />
+                    </li>
+                    <li>
+                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.website" placeholder="Website" />
+                    </li>
+                    <li>
+                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                        <input [(ngModel)]="contact.company" placeholder="Мiсце роботи" />
+                    </li>
+                </ul>
+            </div>
+            <div class="button">
+                <button type="submit" class="btn btn-success" (click)="goBack()">Скасувати</button>
+                <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid" (click)="edit()">Редагувати</button>
+            </div>
+        </section>
+    </aside>
+</div>
+<!-- ==================================== -->
+<!-- 
 <div class="container">
     <div [hidden]="!submitted">
         <h1>Редагувати контакт</h1>
@@ -44,4 +122,4 @@
 
         </form>
     </div>
-</div>
+</div> -->
