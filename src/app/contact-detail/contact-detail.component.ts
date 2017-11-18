@@ -24,6 +24,10 @@ export class ContactDetailComponent implements OnInit {
     private location: Location
   ) {}
 
+  submitted = true;
+
+  onSubmit() { this.submitted = false; }
+
   ngOnInit(): void {
     this.route.params.subscribe(p => {
       this.id = p.id;

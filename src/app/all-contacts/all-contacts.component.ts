@@ -17,11 +17,11 @@ export class AllContactsComponent implements OnInit {
   constructor(
 
     private http: ContactHttpService,
-    private router: Router) { }
+    private router: Router
 
-    submitted = true;
+  ) { }
 
-    onSubmit() { this.submitted = false; }
+    visible = true;
 
     getContact(): void {
       this.http

@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import { of } from 'rxjs/observable/of';
+
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 // Observable class extensions
 import 'rxjs/add/observable/of';
@@ -51,7 +54,7 @@ export class ContactSearchComponent implements OnInit {
   }
 
   gotoDetail(contact: Contact): void {
-    const link = ['/detail', contact.id];
+    const link = ['/contact', contact.id];
     this.router.navigate(link);
   }
 }

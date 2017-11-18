@@ -11,7 +11,40 @@
 
 .search-result:hover {
     color: #eee;
+    background-color: #3663a7;
+}
+
+
+/* ======================================= */
+
+.search-result li {
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    width: 195px;
+    height: 16px;
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.search-result li:hover {
     background-color: #607D8B;
+}
+
+.search-result li a {
+    color: #888;
+    display: block;
+    text-decoration: none;
+}
+
+.search-result li a:hover {
+    color: white;
+}
+
+.search-result li a:active {
+    color: white;
 }
 
 
@@ -24,22 +57,35 @@
     min-width: 500px;
     border-radius: 5px;
     margin-right: 20px;
-    background-color: rgba(255, 255, 255, 0.16);
     padding: 0 20px;
 }
 
-.search .fa {
+
+/* .search .fa {
     color: white;
-}
+} */
 
 input {
     border-style: none;
+    border: 0px;
+    border-radius: 0 5px 5px 0;
     width: 100%;
-    height: 100%;
-    margin-left: 20px;
-    background-color: rgba(255, 255, 255, 0);
+    height: 48px;
+    padding-left: 15px;
+    background-color: rgba(255, 255, 255, 0.16);
     font-size: 18px;
     color: #000;
+}
+
+.search span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 50px;
+    width: 60px;
+    color: white;
 }
 
 .search input:focus {

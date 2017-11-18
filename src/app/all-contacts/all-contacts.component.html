@@ -10,7 +10,7 @@
                 </a>
             </div>
             <div class="edit-del">
-                <button routerLink="/contact/{{contact.id}}" (ngSubmit)="onSubmit()"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <button routerLink="/contact/{{contact.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                 <button (click)="delete(contact); $event.stopPropagation()"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </div>
         </li>

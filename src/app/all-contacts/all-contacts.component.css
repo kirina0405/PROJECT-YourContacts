@@ -93,6 +93,8 @@
     height: 100%;
     position: fixed;
     z-index: 1;
+    width: 200px;
+    margin-left: -200px;
     top: 64px;
     left: 0;
     background-color: #fff;
