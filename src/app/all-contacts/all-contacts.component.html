@@ -1,4 +1,4 @@
-<main [hidden]="submitted" id="main">
+<main id="main">
     <ul class="list">
         <li *ngFor="let contact of contactsArray" class="contact">
             <div class="item">
@@ -10,17 +10,20 @@
                 </a>
             </div>
             <div class="edit-del">
-                <button routerLink="/contact/{{contact.id}}"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                <button routerLink="/contact/{{contact.id}}" (ngSubmit)="onSubmit()"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                 <button (click)="delete(contact); $event.stopPropagation()"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </div>
         </li>
     </ul>
 </main>
+
 <!-- =============NewContact================ -->
+
 <button type="button" class="newContact" routerLink="/contact/new">+</button>
+
 <!-- ============Sidenav===================== -->
-<nav id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+<nav [hidden]="!visible" id="mySidenav" class="sidenav">
     <div class="menu">
         <a routerLink="/contact"><i class="fa fa-users" aria-hidden="true"></i><span>Усi контакти</span></a>
         <a href="#" routerLink="/contact/new"><i class="fa fa-user-plus" aria-hidden="true"></i>Додати контакт</a>

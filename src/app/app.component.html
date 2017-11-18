@@ -1,11 +1,13 @@
 <header>
-    <div class="button-sidebar" onclick="openNav()">&#9776;</div>
+    <div id="toggler" class="container" (click)="toggle()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
     <div>
         <a routerLink="/contact">{{title}}</a>
     </div>
-    <div class="search">
-        <app-contact-search></app-contact-search>
-    </div>
+    <app-contact-search></app-contact-search>
 </header>
 
 <router-outlet></router-outlet>

@@ -19,6 +19,10 @@ export class AllContactsComponent implements OnInit {
     private http: ContactHttpService,
     private router: Router) { }
 
+    submitted = true;
+
+    onSubmit() { this.submitted = false; }
+
     getContact(): void {
       this.http
           .getContact()
@@ -37,4 +41,4 @@ export class AllContactsComponent implements OnInit {
             if (this.selectedContact === contact) { this.selectedContact = null; }
           });
     }
-  }
+}

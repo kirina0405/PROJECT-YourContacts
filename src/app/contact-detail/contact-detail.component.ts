@@ -15,18 +15,8 @@ import { ContactHttpService } from '../services/contact-http.service';
 export class ContactDetailComponent implements OnInit {
 
   public id;
-  public contact: Contact = {
-    id: 0,
-    firstName: '',
-    secondName: '',
-    phone: '',
-    birthday: '',
-    website: '',
-    email: '',
-    company: ''
-};
+  public contact;
 
-  submitted = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,5 +46,4 @@ export class ContactDetailComponent implements OnInit {
     this.location.back();
   }
 
-  onSubmit() { this.submitted = true; }
 }

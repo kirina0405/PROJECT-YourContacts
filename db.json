@@ -2,7 +2,7 @@
   "contacts": [
     {
       "id": 1,
-      "firstName": "JoyRoy",
+      "firstName": "JoyRoyR",
       "secondName": "Dorny",
       "phone": 380666666666,
       "birthday": "01.01.2007",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "firstName": "Mike3",
+      "firstName": "Mike333",
       "secondName": "Duval",
       "phone": "380666666786",
       "birthday": "01.01.2000",
@@ -42,11 +42,41 @@
     },
     {
       "id": 5,
-      "firstName": "Ilya",
+      "firstName": "IlyaW",
       "secondName": "Kondidat",
       "phone": "(097)56780393",
       "birthday": "",
       "website": "www.ytuti.ua",
+      "email": "",
+      "company": ""
+    },
+    {
+      "id": 6,
+      "firstName": "Ioan",
+      "secondName": "Kalita",
+      "phone": "66663333555",
+      "birthday": "21.09.1690",
+      "website": "www.kalita.ru",
+      "email": "kalit@yahoo.ru",
+      "company": "Palats"
+    },
+    {
+      "id": 7,
+      "firstName": "eee",
+      "secondName": "",
+      "phone": "",
+      "birthday": "",
+      "website": "",
+      "email": "",
+      "company": ""
+    },
+    {
+      "id": 8,
+      "firstName": "gggg",
+      "secondName": "",
+      "phone": "",
+      "birthday": "",
+      "website": "",
       "email": "",
       "company": ""
     }
