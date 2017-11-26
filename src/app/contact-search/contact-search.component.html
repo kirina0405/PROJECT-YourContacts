@@ -1,28 +1,12 @@
 <div id="search-component" class="search">
     <span><a><i class="fa fa-search"></i></a></span>
     <input #searchBox id="search-box" (keyup)="search(searchBox.value)" type="text" placeholder="Пошук" />
+
     <ul class="search-result">
-        <li *ngFor="let contact of contactsArray | async">
+        <li *ngFor="let contact of contactsArray$ | async">
             <a routerLink="/contact/{{contact.id}}">
             {{contact.firstName}}
           </a>
         </li>
     </ul>
-
-    <!-- <div class="searchText">
-        <div *ngFor="let contact of contactsArray | async" (click)="gotoDetail(contact)" class="search-result">
-            {{contact.firstName}}
-        </div>
-    </div> -->
 </div>
-
-
-<!-- <div id="search-component">
-    <h4>Пошук контакту</h4>
-    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-    <div>
-        <div *ngFor="let contact of contactsArray | async" (click)="gotoDetail(contact)" class="search-result">
-            {{contact.firstName}}
-        </div>
-    </div>
-</div> -->
